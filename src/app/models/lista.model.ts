@@ -1,6 +1,6 @@
 import { ItemModel } from "./lista-item.model";
 
-export class ListaModel{
+export class Lista{
 
     id: number;
     titulo: string;
