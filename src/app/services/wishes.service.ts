@@ -8,15 +8,26 @@ export class WishesService {
 
   public Listas: Lista[] = [];
 
-  constructor() { 
-    
+  constructor() {
+    this.obtenerStorage();
   }
 
 
-  crearLista( titulo: string ){
+  crearLista(titulo: string) {
     const nuevaLista = new Lista(titulo);
-
-    this.Listas.push( nuevaLista );
+    this.Listas.push(nuevaLista);
+    this.guardarStorage();
   }
 
+  guardarStorage() {
+    localStorage.setItem('data', JSON.stringify(this.Listas));
+  }
+
+  obtenerStorage() {
+    if (localStorage.getItem('data')) {
+      this.Listas = JSON.parse(localStorage.getItem('data'));
+    } else {
+      this.Listas = [];
+    }
+  }
 }
