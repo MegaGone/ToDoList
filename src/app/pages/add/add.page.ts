@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { WishesService } from 'src/app/services/wishes.service';
 
 @Component({
   selector: 'app-add',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPage implements OnInit {
 
-  constructor() { }
+  constructor(private wishesSvc: WishesService, private route: ActivatedRoute) { 
+    const id = this.route.snapshot.paramMap.get('listaId');
+  }
 
   ngOnInit() {
   }
