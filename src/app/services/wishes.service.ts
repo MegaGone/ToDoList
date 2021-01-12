@@ -10,13 +10,13 @@ export class WishesService {
 
   constructor() { 
     
-    const lista1 = new Lista('Super');
-    const lista2 = new Lista('Comida');
-
-    this.Listas.push(lista1, lista2)
-
-    console.log(this.Listas);
   }
 
+
+  crearLista( titulo: string ){
+    const nuevaLista = new Lista(titulo);
+
+    this.Listas.push( nuevaLista );
+  }
 
 }
