@@ -9,7 +9,7 @@ import { WishesService } from 'src/app/services/wishes.service';
 export class Tab2Page {
 
   constructor(public wishesSvc: WishesService) {
-    console.log('Service works');
+    
   }
 
 }
