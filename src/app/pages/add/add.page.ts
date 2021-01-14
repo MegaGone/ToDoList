@@ -24,7 +24,6 @@ export class AddPage implements OnInit {
   }
 
   agregarItem() {
-
     if (this.nombreItem.length === 0) {
       return;
     }
@@ -37,7 +36,30 @@ export class AddPage implements OnInit {
 
     // Actualizar el storage
     this.wishesSvc.guardarStorage();
+  }
 
+  cambioCheck(item: ItemModel) {
+
+    // filtrar los items que esten pendientes
+    const pendientes = this.lista.items.filter(itemData => !itemData.completado).length;
+
+    // mostrar cuando la lista este terminada
+    if( pendientes === 0){
+      this.lista.over = new Date();
+      this.lista.completada = true;
+
+    } else{
+      this.lista.over = null;
+      this.lista.completada = false;
+    }
+
+    this.wishesSvc.guardarStorage();
+  }
+
+  eliminarItem( i: number ){
+    this.lista.items.splice(i, 1);
+
+    this.wishesSvc.guardarStorage();
   }
 
 }
