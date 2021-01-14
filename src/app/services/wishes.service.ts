@@ -22,11 +22,9 @@ export class WishesService {
   }
 
   obtenerLista( id: string | number ){
-
     id = Number(id);
 
-    this.Listas.find( listaData =>  listaData.id === id);
-
+    return this.Listas.find( listaData =>  listaData.id === id);
   }
 
   guardarStorage() {
