@@ -1,6 +1,20 @@
 <ion-list>
-  <ion-item (click)="listaSeleccionada( lista )" *ngFor="let lista of wishesSvc.Listas" detail>
-    <ion-label>{{ lista.titulo }}</ion-label>
-    <ion-note slot="end" color="tertiary">{{ lista.items.length }} items</ion-note>
-  </ion-item>
+
+  <ion-item-sliding *ngFor="let lista of wishesSvc.Listas">
+
+    <ion-item (click)="listaSeleccionada( lista )" detail>
+
+      <ion-label>{{ lista.titulo }}</ion-label>
+
+      <ion-note slot="end" color="tertiary">{{ lista.items.length }} items</ion-note>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option (click)="borrarLista( lista )" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
 </ion-list>

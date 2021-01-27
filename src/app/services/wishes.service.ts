@@ -21,10 +21,16 @@ export class WishesService {
     return nuevaLista.id;
   }
 
-  obtenerLista( id: string | number ){
+  borrarLista(lista: Lista) {
+    this.Listas = this.Listas.filter(rawLista => rawLista.id !== lista.id);
+
+    this.guardarStorage();
+  }
+
+  obtenerLista(id: string | number) {
     id = Number(id);
 
-    return this.Listas.find( listaData =>  listaData.id === id);
+    return this.Listas.find(listaData => listaData.id === id);
   }
 
   guardarStorage() {
@@ -38,4 +44,5 @@ export class WishesService {
       this.Listas = [];
     }
   }
+
 }

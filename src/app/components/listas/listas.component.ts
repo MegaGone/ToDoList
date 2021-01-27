@@ -23,4 +23,11 @@ export class ListasComponent implements OnInit {
       this.router.navigateByUrl(`/tabs/tab1/add/ ${lista.id}`);
     }
   }
+
+  borrarLista( lista: Lista ) {
+    this.wishesSvc.borrarLista(lista);
+
+    
+  }
+
 }
