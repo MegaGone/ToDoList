@@ -1,14 +1,14 @@
-<ion-header class="ion-no-border" [translucent]="true">
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
     <ion-title>
       Pendientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="dark">
 
-  <app-listas [terminada]="false"></app-listas>
+  <app-listas [terminada]="false" color="dark"></app-listas>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="tertiary" (click)="agregarLista()">

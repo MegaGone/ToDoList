@@ -1,5 +1,5 @@
-<ion-header no-border>
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
 
     <ion-buttons slot="start">
       <ion-back-button color="tertiary" defaultHref="/"></ion-back-button>
@@ -9,24 +9,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="dark">
 
-  <ion-list>
-    <ion-item>
+  <ion-list color="dark">
+    <ion-item color="dark">
       <ion-label position="floating">Nuevo Item</ion-label>
       <ion-input type="text" (keyup.enter)="agregarItem()" [(ngModel)]="nombreItem"></ion-input>
     </ion-item>
   </ion-list>
 
-  <ion-list>
-    <ion-list-header *ngIf="lista.items.length > 0">
+  <ion-list color="dark">
+    <ion-list-header *ngIf="lista.items.length > 0" color="dark">
       <ion-label>Tareas por hacer</ion-label>
     </ion-list-header>
 
 
     <ion-item-sliding class="animated fadeInDown" *ngFor="let item of lista.items; let i = index">
 
-      <ion-item>
+      <ion-item color="dark">
         <ion-checkbox (ionChange)="cambioCheck( item )" color="tertiary" slot="start" [(ngModel)]="item.completado">
         </ion-checkbox>
         <ion-label>{{ item.desc }}</ion-label>
